@@ -41,7 +41,6 @@ kube-node-lease          Active   39d
 kube-public              Active   39d
 kube-system              Active   39d
 nfs-server-provisioner   Active   24d
-
 ```
 
 Создаем deployment и svc:
@@ -51,6 +50,7 @@ nfs-server-provisioner   Active   24d
 [backend.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/backend.yaml)
 
 [cache.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/cache.yaml)
+
 
 ```
 serg@k8snode:~/git/K8s-13/code$ kubectl apply -f frontend.yaml
@@ -79,7 +79,6 @@ NAME       TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE   SELECTOR
 backend    ClusterIP   10.152.183.141   <none>        80/TCP    77s   app=backend
 cache      ClusterIP   10.152.183.163   <none>        80/TCP    69s   app=cache
 frontend   ClusterIP   10.152.183.126   <none>        80/TCP    85s   app=frontend
-
 ```
 
 Проверяем доступность сервисов:
@@ -110,7 +109,6 @@ serg@k8snode:~/git/K8s-13/code$ kubectl exec backend-65d8d9d74-swr4f -- curl cac
                                  Dload  Upload   Total   Spent    Left  Speed
 100    77  100    77    0     0  57037      0 --:--:-- --:--:-- --:--:-- 77000
 Praqma Network MultiTool (with NGINX) - cache-bfdc876fb-zlqf6 - 10.1.218.146
-
 ```
 
 Создаем сетевые политики:
@@ -121,7 +119,6 @@ Praqma Network MultiTool (with NGINX) - cache-bfdc876fb-zlqf6 - 10.1.218.146
 
 [policy_cache.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/policy/policy_cache.yaml)
 
-```
 
 Создаем общее запрещающее правило и сразу проверяем:
 
@@ -187,7 +184,6 @@ serg@k8snode:~/git/K8s-13/code/policy$ kubectl exec cache-bfdc876fb-zlqf6 -- cur
   0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0
 curl: (28) Connection timed out after 10000 milliseconds
 command terminated with exit code 28
-
 ```
 
 
