@@ -46,11 +46,11 @@ nfs-server-provisioner   Active   24d
 
 Создаем deployment и svc:
 
-[frontend.yaml]()
+[frontend.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/frontend.yaml)
 
-[backend.yaml]()
+[backend.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/backend.yaml)
 
-[cache.yaml]()
+[cache.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/cache.yaml)
 
 ```
 serg@k8snode:~/git/K8s-13/code$ kubectl apply -f frontend.yaml
@@ -115,11 +115,11 @@ Praqma Network MultiTool (with NGINX) - cache-bfdc876fb-zlqf6 - 10.1.218.146
 
 Создаем сетевые политики:
 
-[default.yaml]()
+[default.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/policy/default.yaml)
 
-[policy_backend.yaml]()
+[policy_backend.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/policy/policy_backend.yaml)
 
-[policy_cache.yaml]()
+[policy_cache.yaml](https://github.com/smabramov/K8s-13/blob/413dfab4a668de15f3b6f1046f2ba19933b756bf/code/policy/policy_cache.yaml)
 
 ```
 
